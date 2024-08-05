@@ -10,13 +10,17 @@ from reportlab.lib.utils import ImageReader
 Point = namedtuple('Point', ['x', 'y'])
 
 class Page():
-    def __init__(self):
-        # there are a lot of settings here.
-        # For an MVP I'm just hardcoding this.
-        self.dpi = 400
-        self.pagesize = letter
-        self.page_margin = 0.25 * inch
-        self.max_pages = None
+    def __init__(
+        self,
+        dpi=400,
+        pagesize=letter,
+        page_margin=0.25,
+        max_pages=None,
+    ):
+        self.dpi = dpi
+        self.pagesize = pagesize
+        self.page_margin = page_margin * inch
+        self.max_pages = max_pages
 
     @property
     def page_width(self) -> float:
