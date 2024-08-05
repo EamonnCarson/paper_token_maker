@@ -1,5 +1,7 @@
 images
 configs
+.DS_Store
+*.pdf
 
 # taken from https://github.com/github/gitignore/blob/main/Python.gitignore
 # Byte-compiled / optimized / DLL files
