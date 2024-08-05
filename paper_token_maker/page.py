@@ -88,13 +88,14 @@ class Page():
                     self.validate_token(token)
                     if x + token.image_width > self.right_margin:
                         y += max_height_in_row
-                        x = 0
+                        x = self.page_margin
                     if y + token.image_height > self.bottom_margin:
                         print('Cannot render all of these tokens, doing my best')
                         return token_placements
                     placement = Point(x, y)
                     token_placements.append((placement, token))
                     x += token.image_width
+                    max_height_in_row = max(max_height_in_row, token.image_height)
         return token_placements
 
     def render(self, tokens: List[Token], output_stream_or_filename: str | IO[bytes]):
