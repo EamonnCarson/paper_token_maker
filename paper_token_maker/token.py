@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Tuple
 from PIL import Image
 from PIL import ImageOps
 from reportlab.lib.units import inch
@@ -11,6 +11,7 @@ class Token():
             width: float,
             back_image_path: Optional[str] = None,
             border_thickness: float = 0.1,
+            border_color: Tuple[int, int, int] = (254, 254, 254),
             mirror_back: bool = False,
             copies: int = 1,
     ):
@@ -21,6 +22,7 @@ class Token():
         height:             float height in inches of each printed token image.
         width:              float width in inches of each printed token image.
         border_thickness:   float thickness in inches of the border around token
+        border_color:       int RGB Tuple color of border. Default off-white
         mirror_back:        bool if True, mirror back so that text would read
                             properly. May cause misalignment with front if the
                             picture is not horizontally symmetrical.
@@ -33,6 +35,7 @@ class Token():
         self._border_thickness = border_thickness * inch
         self._mirror_back = mirror_back
         self._copies = copies
+        self._border_color = border_color
 
     def __str__(self):
         return (f"Token(front_image_path='{self._front_image_path}', "
@@ -74,7 +77,11 @@ class Token():
             back_img = ImageOps.mirror(back_img)
 
         border = int(self._border_thickness * dpi / inch)
-        combined_img = Image.new('RGB', (pixel_width + border * 2, pixel_height * 2 + border * 2))
+        combined_img = Image.new(
+            'RGB',
+            (pixel_width + border * 2, pixel_height * 2 + border * 2),
+            color=self._border_color
+            )
         combined_img.paste(front_img, (border, border))
         combined_img.paste(back_img, (border, 3 * border + front_img.height))
         return combined_img

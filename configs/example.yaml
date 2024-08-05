@@ -1,0 +1,14 @@
+page: {}
+tokens:
+  - front_image_path: images/test_image.png
+    height: 2.4
+    width: 1.4
+    border_thickness: 0.05
+    mirror_back: False
+    copies: 12
+  - front_image_path: images/test_image.png
+    height: 4.9
+    width: 2.9
+    border_thickness: 0.05
+    mirror_back: False
+    copies: 2

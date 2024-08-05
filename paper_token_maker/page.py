@@ -16,7 +16,6 @@ class Page():
         self.dpi = 400
         self.pagesize = letter
         self.page_margin = 0.25 * inch
-        print(self.pagesize)
 
     @property
     def page_width(self) -> float:
