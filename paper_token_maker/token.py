@@ -12,6 +12,7 @@ class Token():
             back_image_path: Optional[str] = None,
             border_thickness: float = 0.1,
             border_colors: Tuple[int, int, int] | List[Tuple[int, int, int]] = (254, 254, 254),
+            background_colors: Tuple[int, int, int] | List[Tuple[int, int, int]] = (0, 0, 0),
             mirror_back: bool = False,
             copies: int = 1,
             metadata: Dict[any, any] = None,
@@ -24,6 +25,8 @@ class Token():
         width:              float width in inches of each printed token image.
         border_thickness:   float thickness in inches of the border around token
         border_colors:      int RGB Tuple color of border. Default off-white
+                            if multiple colors supplied, cycle through them.
+        background_colors:  int RGB Tuple color of background. Default black
                             if multiple colors supplied, cycle through them.
         mirror_back:        bool if True, mirror back so that text would read
                             properly. May cause misalignment with front if the
@@ -40,6 +43,7 @@ class Token():
         self._mirror_back = mirror_back
         self._copies = copies
         self._border_colors = border_colors
+        self._background_colors = background_colors
 
     def __str__(self):
         return (f"Token(front_image_path='{self._front_image_path}', "
@@ -76,6 +80,20 @@ class Token():
         # output needs to be a tuple
         return (color[0], color[1], color[2])
 
+    def _background_color(self, token_index) -> Tuple[int, int, int]:
+        try:
+            color = self._background_colors[token_index % len(self._background_colors)]
+            len(color)  # checks that it's not an int
+        except:
+            color = self._background_colors
+        # output needs to be a tuple
+        return (color[0], color[1], color[2])
+
+    def _set_background_color(self, image: Image, color: Tuple[int, int, int]) -> Image:
+        image_with_background = Image.new('RGBA', image.size, color)
+        image_with_background.paste(image, (0, 0), image)
+        return image_with_background
+
     def to_image(self, dpi: int, token_index=0) -> Image:
         dpi_per_inch = dpi / inch  # convert reportlab inch to pixels
         front_img = Image.open(self._front_image_path)
@@ -91,13 +109,16 @@ class Token():
             back_img = ImageOps.mirror(back_img)
 
         pixel_border = int(self._border_thickness * dpi_per_inch)
-        color = self._border_color(token_index)
+        border_color = self._border_color(token_index)
+        background_color = self._background_color(token_index)
+        front_img = self._set_background_color(front_img, background_color)
+        back_img = self._set_background_color(back_img, background_color)
         combined_img = Image.new(
-            'RGB',
+            'RGBA',
             (int(self.image_width * dpi_per_inch), int(self.image_height * dpi_per_inch)),
-            color=color,
+            color=border_color,
             )
         # front img is on bottom so that fold-crease is on top.
-        combined_img.paste(back_img, (pixel_border, pixel_border))
-        combined_img.paste(front_img, (pixel_border, 3 * pixel_border + back_img.height))
+        combined_img.paste(back_img, (pixel_border, pixel_border), mask=back_img)
+        combined_img.paste(front_img, (pixel_border, 3 * pixel_border + back_img.height), mask=front_img)
         return combined_img
