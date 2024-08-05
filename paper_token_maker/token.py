@@ -82,6 +82,7 @@ class Token():
             (pixel_width + border * 2, pixel_height * 2 + border * 2),
             color=self._border_color
             )
-        combined_img.paste(front_img, (border, border))
-        combined_img.paste(back_img, (border, 3 * border + front_img.height))
+        # front img is on bottom so that fold-crease is on top.
+        combined_img.paste(back_img, (border, border))
+        combined_img.paste(front_img, (border, 3 * border + back_img.height))
         return combined_img
