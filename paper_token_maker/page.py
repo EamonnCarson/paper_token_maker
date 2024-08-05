@@ -118,8 +118,8 @@ class Page():
         c = canvas.Canvas(output_stream_or_filename, pagesize=self.pagesize)
         arrangement = self.arrange(tokens)
         for page_arrangement in arrangement:
-            for _, (point, token) in enumerate(page_arrangement):
-                token_image = token.to_image(dpi=self.dpi)
+            for i, (point, token) in enumerate(page_arrangement):
+                token_image = token.to_image(dpi=self.dpi, token_index=i)
                 img_byte_io = io.BytesIO()
                 token_image.save(img_byte_io, format='PNG')
                 img_byte_io.seek(0)
