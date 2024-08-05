@@ -79,7 +79,7 @@ class Token():
         border = int(self._border_thickness * dpi / inch)
         combined_img = Image.new(
             'RGB',
-            (pixel_width + border * 2, pixel_height * 2 + border * 2),
+            (pixel_width + border * 2, pixel_height * 2 + border * 4),
             color=self._border_color
             )
         # front img is on bottom so that fold-crease is on top.
