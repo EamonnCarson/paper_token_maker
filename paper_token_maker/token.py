@@ -13,6 +13,7 @@ class Token():
             border_thickness: float = 0.1,
             border_colors: Tuple[int, int, int] | List[Tuple[int, int, int]] = (254, 254, 254),
             background_colors: Tuple[int, int, int] | List[Tuple[int, int, int]] = (0, 0, 0),
+            background_image_paths: Optional[str | List[str]] = None,
             mirror_back: bool = False,
             copies: int = 1,
             metadata: Dict[any, any] = None,
@@ -28,6 +29,10 @@ class Token():
                             if multiple colors supplied, cycle through them.
         background_colors:  int RGB Tuple color of background. Default black
                             if multiple colors supplied, cycle through them.
+        background_image_paths:
+                            str or list[str] image paths to render behind token.
+                            if multiple images supplied, cycle through them.
+                            overrides background color.
         mirror_back:        bool if True, mirror back so that text would read
                             properly. May cause misalignment with front if the
                             picture is not horizontally symmetrical.
@@ -44,6 +49,7 @@ class Token():
         self._copies = copies
         self._border_colors = border_colors
         self._background_colors = background_colors
+        self._background_image_paths = background_image_paths
 
     def __str__(self):
         return (f"Token(front_image_path='{self._front_image_path}', "
@@ -89,30 +95,55 @@ class Token():
         # output needs to be a tuple
         return (color[0], color[1], color[2])
 
-    def _set_background_color(self, image: Image, color: Tuple[int, int, int]) -> Image:
-        image_with_background = Image.new('RGBA', image.size, color)
-        image_with_background.paste(image, (0, 0), image)
-        return image_with_background
+    def _background_image(self, token_index: int, image_size: Tuple[int, int]) -> Image:
+        if self._background_image_paths is not None:
+            if isinstance(self._background_image_paths, str):
+                background_image_path = self._background_image_paths
+            else:
+                index = token_index % len(self._background_image_paths)
+                background_image_path = self._background_image_paths[index]
+            background_image = Image.open(background_image_path)
+            background_image = background_image.resize(image_size)
+        else:
+            try:
+                color = self._background_colors[token_index % len(self._background_colors)]
+                len(color)  # checks that it's not an int
+            except:
+                color = self._background_colors
+            # only tuples accepted
+            color = (color[0], color[1], color[2])
+            background_image = Image.new('RGBA', image_size, color)
+        return background_image
+
+    def apply_background(self, image: Image, background: Image):
+        background.paste(image, (0, 0), mask=image)
+        return background
 
     def to_image(self, dpi: int, token_index=0) -> Image:
         dpi_per_inch = dpi / inch  # convert reportlab inch to pixels
+
+        # load front and back images, resize them, orient them.
         front_img = Image.open(self._front_image_path)
         back_image_path = self._back_image_path or self._front_image_path
         back_img = Image.open(back_image_path)
         pixel_width = int(self._width * dpi_per_inch)
         pixel_height = int(self._height * dpi_per_inch)
-        front_img = front_img.resize((pixel_width, pixel_height))
-        back_img = back_img.resize((pixel_width, pixel_height))
+        token_pixel_dims = (pixel_width, pixel_height)
+        front_img = front_img.resize(token_pixel_dims)
+        back_img = back_img.resize(token_pixel_dims)
         back_img = ImageOps.flip(back_img)
-
         if self._mirror_back:
             back_img = ImageOps.mirror(back_img)
 
+        # apply background color or image
         pixel_border = int(self._border_thickness * dpi_per_inch)
         border_color = self._border_color(token_index)
-        background_color = self._background_color(token_index)
-        front_img = self._set_background_color(front_img, background_color)
-        back_img = self._set_background_color(back_img, background_color)
+        background_image = self._background_image(token_index, token_pixel_dims)
+        front_img = self.apply_background(front_img, background_image)
+        background_image = self._background_image(token_index, token_pixel_dims)
+        back_img = self.apply_background(back_img, background_image)
+
+        # stack the front and back images within the frame, apply border
         combined_img = Image.new(
             'RGBA',
             (int(self.image_width * dpi_per_inch), int(self.image_height * dpi_per_inch)),
