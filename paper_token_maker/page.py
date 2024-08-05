@@ -16,6 +16,7 @@ class Page():
         self.dpi = 400
         self.pagesize = letter
         self.page_margin = 0.25 * inch
+        self.max_pages = None
 
     @property
     def page_width(self) -> float:
@@ -56,7 +57,7 @@ class Page():
         height = int(token.image_height / (0.01 * inch))
         return (height, width)
 
-    def arrange(self, tokens: List[Token]) -> List[Tuple[Point, Token]]:
+    def arrange(self, tokens: List[Token]) -> List[List[Tuple[Point, Token]]]:
         """
         Two factors to consider optimizing over:
         1. we want to reduce the amount of wasted space as much as possible.
@@ -77,6 +78,7 @@ class Page():
             token_groups[ordinal] = token_group
 
         # from largest to smallest token
+        page_token_placements = []
         token_placements = []
         x = self.page_margin
         y = self.page_margin
@@ -90,22 +92,34 @@ class Page():
                         y += max_height_in_row
                         x = self.page_margin
                     if y + token.image_height > self.bottom_margin:
-                        print('Cannot render all of these tokens, doing my best')
-                        return token_placements
+                        page_token_placements.append(token_placements)
+                        if len(page_token_placements) == self.max_pages:
+                            print('Cannot render all of these tokens due to page limit. Doing my best.')
+                            return page_token_placements
+                        else:
+                            token_placements = []
+                            x = self.page_margin
+                            y = self.page_margin
+                            max_height_in_row = 0
                     placement = Point(x, y)
                     token_placements.append((placement, token))
                     x += token.image_width
                     max_height_in_row = max(max_height_in_row, token.image_height)
-        return token_placements
+
+        if len(token_placements) > 0:
+            page_token_placements.append(token_placements)
+        return page_token_placements
 
     def render(self, tokens: List[Token], output_stream_or_filename: str | IO[bytes]):
         c = canvas.Canvas(output_stream_or_filename, pagesize=self.pagesize)
         arrangement = self.arrange(tokens)
-        for _, (point, token) in enumerate(arrangement):
-            token_image = token.to_image(dpi=self.dpi)
-            img_byte_io = io.BytesIO()
-            token_image.save(img_byte_io, format='PNG')
-            img_byte_io.seek(0)
-            token_image_reader = ImageReader(img_byte_io)
-            c.drawImage(token_image_reader, point.x, point.y, width=token.image_width, height=token.image_height)
+        for page_arrangement in arrangement:
+            for _, (point, token) in enumerate(page_arrangement):
+                token_image = token.to_image(dpi=self.dpi)
+                img_byte_io = io.BytesIO()
+                token_image.save(img_byte_io, format='PNG')
+                img_byte_io.seek(0)
+                token_image_reader = ImageReader(img_byte_io)
+                c.drawImage(token_image_reader, point.x, point.y, width=token.image_width, height=token.image_height)
+            c.showPage() # this draws the current page and goes to the next page
         c.save()
