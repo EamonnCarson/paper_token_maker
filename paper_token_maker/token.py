@@ -143,9 +143,9 @@ class Token():
         dpi_per_inch = dpi / inch  # convert reportlab inch to pixels
 
         # load front and back images, resize them, orient them.
-        front_img = Image.open(self._front_image_path)
+        front_img = Image.open(self._front_image_path).convert("RGBA")
         back_image_path = self._back_image_path or self._front_image_path
-        back_img = Image.open(back_image_path)
+        back_img = Image.open(back_image_path).convert("RGBA")
         pixel_width = int(self._width * dpi_per_inch)
         pixel_height = int(self._height * dpi_per_inch)
         token_pixel_dims = (pixel_width, pixel_height)
