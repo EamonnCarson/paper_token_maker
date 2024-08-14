@@ -10,8 +10,9 @@ class Token():
             height: float,
             width: float,
             back_image_path: Optional[str] = None,
+            bottom_margin: float = 0.5,
             border_thickness: float = 0.1,
-            border_colors: Tuple[int, int, int] | List[Tuple[int, int, int]] = (254, 254, 254),
+            border_colors: Tuple[int, int, int] | List[Tuple[int, int, int]] = (255, 255, 255),
             background_colors: Tuple[int, int, int] | List[Tuple[int, int, int]] = (0, 0, 0),
             background_image_paths: Optional[str | List[str]] = None,
             mirror_back: bool = False,
@@ -24,8 +25,10 @@ class Token():
                             if omitted, defaults to front_image_path.
         height:             float height in inches of each printed token image.
         width:              float width in inches of each printed token image.
+        bottom_margin:      float height of the margin at the base of the token
+                            (you need some paper to stick / paste onto a stand).
         border_thickness:   float thickness in inches of the border around token
-        border_colors:      int RGB Tuple color of border. Default off-white
+        border_colors:      int RGB Tuple color of border. Default is white.
                             if multiple colors supplied, cycle through them.
         background_colors:  int RGB Tuple color of background. Default black
                             if multiple colors supplied, cycle through them.
@@ -44,6 +47,7 @@ class Token():
         self._back_image_path = back_image_path
         self._height = height * inch
         self._width = width * inch
+        self._bottom_margin = bottom_margin * inch
         self._border_thickness = border_thickness * inch
         self._mirror_back = mirror_back
         self._copies = copies
@@ -71,7 +75,7 @@ class Token():
     @property
     def image_height(self) -> float:
         """ returns in reportlab units """
-        return self._height * 2 + self._border_thickness * 4
+        return self._height * 2 + self._border_thickness * 4 + self._bottom_margin * 2
 
     @property
     def copies(self) -> int:
@@ -119,6 +123,22 @@ class Token():
         background.paste(image, (0, 0), mask=image)
         return background
 
+    def set_corner_pixels_black(self, image: Image, cross_radius_px=10) -> None:
+        # Set corner pixels to black
+        right = image.width - 1
+        bottom = image.height - 1
+        pixels = image.load()
+        black = (0, 0, 0)
+        for i in range(cross_radius_px):
+            pixels[0, 0+i] = black  # Top-left corner
+            pixels[right-i, 0] = black  # Top-right corner
+            pixels[0+i, bottom] = black  # Bottom-left corner
+            pixels[right, bottom-i] = black  # Bottom-right corner
+            pixels[0+i, 0] = black  # Top-left corner
+            pixels[right, 0+i] = black  # Top-right corner
+            pixels[0, bottom-i] = black  # Bottom-left corner
+            pixels[right-i, bottom] = black  # Bottom-right corner
+
     def to_image(self, dpi: int, token_index=0) -> Image:
         dpi_per_inch = dpi / inch  # convert reportlab inch to pixels
 
@@ -131,9 +151,6 @@ class Token():
         token_pixel_dims = (pixel_width, pixel_height)
         front_img = front_img.resize(token_pixel_dims)
         back_img = back_img.resize(token_pixel_dims)
-        back_img = ImageOps.flip(back_img)
-        if self._mirror_back:
-            back_img = ImageOps.mirror(back_img)
 
         # apply background color or image
         pixel_border = int(self._border_thickness * dpi_per_inch)
@@ -143,6 +160,11 @@ class Token():
         background_image = self._background_image(token_index, token_pixel_dims)
         back_img = self.apply_background(back_img, background_image)
 
+        # flip/mirror the back image as needed
+        back_img = ImageOps.flip(back_img)
+        if self._mirror_back:
+            back_img = ImageOps.mirror(back_img)
+
         # stack the front and back images within the frame, apply border
         combined_img = Image.new(
             'RGBA',
@@ -150,6 +172,10 @@ class Token():
             color=border_color,
             )
         # front img is on bottom so that fold-crease is on top.
-        combined_img.paste(back_img, (pixel_border, pixel_border), mask=back_img)
-        combined_img.paste(front_img, (pixel_border, 3 * pixel_border + back_img.height), mask=front_img)
+        pixel_bottom_margin = int(self._bottom_margin * dpi_per_inch)
+        y_back = pixel_border + pixel_bottom_margin
+        y_front = y_back + pixel_border + back_img.height + pixel_border
+        combined_img.paste(back_img, (pixel_border, y_back), mask=back_img)
+        combined_img.paste(front_img, (pixel_border, y_front), mask=front_img)
+        self.set_corner_pixels_black(combined_img)
         return combined_img

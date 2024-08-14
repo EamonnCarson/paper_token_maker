@@ -19,6 +19,7 @@ setuptools.setup(
         'pillow',
         'reportlab',
         'pyyaml',
+        'tqdm',
     ],
     entry_points = {
         'console_scripts': [

@@ -6,6 +6,7 @@ from reportlab.lib.units import inch
 from reportlab.pdfgen import canvas
 from paper_token_maker.token import Token
 from reportlab.lib.utils import ImageReader
+from tqdm import tqdm
 
 Point = namedtuple('Point', ['x', 'y'])
 
@@ -87,7 +88,7 @@ class Page():
         x = self.page_margin
         y = self.page_margin
         max_height_in_row = 0
-        for ordinal in reversed(sorted(token_groups.keys())):
+        for ordinal in sorted(token_groups.keys()):
             token_group = token_groups[ordinal]
             for token in token_group:
                 for _ in range(token.copies):
@@ -118,14 +119,17 @@ class Page():
         c = canvas.Canvas(output_stream_or_filename, pagesize=self.pagesize)
         arrangement = self.arrange(tokens)
         count = 0
-        for page_arrangement in arrangement:
-            for (point, token) in page_arrangement:
-                token_image = token.to_image(dpi=self.dpi, token_index=count)
-                img_byte_io = io.BytesIO()
-                token_image.save(img_byte_io, format='PNG')
-                img_byte_io.seek(0)
-                token_image_reader = ImageReader(img_byte_io)
-                c.drawImage(token_image_reader, point.x, point.y, width=token.image_width, height=token.image_height)
-                count += 1
-            c.showPage() # this draws the current page and goes to the next page
+        num_tokens = sum((len(page_arrangement) for page_arrangement in arrangement))
+        with tqdm(total=num_tokens, desc='Tokens rendered') as pbar:
+            for page_arrangement in arrangement:
+                for (point, token) in page_arrangement:
+                    token_image = token.to_image(dpi=self.dpi, token_index=count)
+                    img_byte_io = io.BytesIO()
+                    token_image.save(img_byte_io, format='PNG')
+                    img_byte_io.seek(0)
+                    token_image_reader = ImageReader(img_byte_io)
+                    c.drawImage(token_image_reader, point.x, point.y, width=token.image_width, height=token.image_height)
+                    count += 1
+                    pbar.update(1)
+                c.showPage() # this draws the current page and goes to the next page
         c.save()
