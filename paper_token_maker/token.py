@@ -16,6 +16,7 @@ class Token():
             background_colors: Tuple[int, int, int] | List[Tuple[int, int, int]] = (0, 0, 0),
             background_image_paths: Optional[str | List[str]] = None,
             mirror_back: bool = False,
+            keep_aspect_ratio: bool = True,
             copies: int = 1,
             metadata: Dict[any, any] = None,
     ):
@@ -36,9 +37,11 @@ class Token():
                             str or list[str] image paths to render behind token.
                             if multiple images supplied, cycle through them.
                             overrides background color.
-        mirror_back:        bool if True, mirror back so that text would read
+        mirror_back:        bool. if True, mirror back so that text would read
                             properly. May cause misalignment with front if the
                             picture is not horizontally symmetrical.
+        keep_aspect_ratio:  bool. if True then render token image with same
+                            aspect ratio as source file.
         copies:             int number of times token should be printed.
         metadata:           unused. only so that you can easily store metadata
                             in the yaml.
@@ -50,6 +53,7 @@ class Token():
         self._bottom_margin = bottom_margin * inch
         self._border_thickness = border_thickness * inch
         self._mirror_back = mirror_back
+        self._keep_aspect_ratio = keep_aspect_ratio
         self._copies = copies
         self._border_colors = border_colors
         self._background_colors = background_colors
@@ -69,13 +73,30 @@ class Token():
 
     @property
     def image_width(self) -> float:
-        """ returns in reportlab units """
+        """ returns in reportlab units the width of the mirrored printable token """
         return self._width + self._border_thickness * 2
 
     @property
     def image_height(self) -> float:
-        """ returns in reportlab units """
+        """ returns in reportlab units the height of the mirrored printable token """
         return self._height * 2 + self._border_thickness * 4 + self._bottom_margin * 2
+
+    def _rescale_image(self, image: Image, pixel_height: int, pixel_width: int) -> float:
+        aspect_ratio = image.height / image.width
+        if self._keep_aspect_ratio:
+            real_pixel_height = int(pixel_width * aspect_ratio)
+            blank = Image.new('RGBA', size=(pixel_width, pixel_height), color=(0,0,0,0))
+            if real_pixel_height <= pixel_height:
+                image = image.resize((pixel_width, real_pixel_height))
+                blank.paste(image, (0,pixel_height-real_pixel_height), mask=image)
+                return blank
+            else:
+                real_pixel_height = pixel_height
+                real_pixel_width = int(pixel_height / aspect_ratio)
+                image = image.resize((real_pixel_width, pixel_height))
+                x_offset = (pixel_width - real_pixel_width) // 2
+                blank.paste(image, (x_offset,0), mask=image)
+                return blank
 
     @property
     def copies(self) -> int:
@@ -149,8 +170,8 @@ class Token():
         pixel_width = int(self._width * dpi_per_inch)
         pixel_height = int(self._height * dpi_per_inch)
         token_pixel_dims = (pixel_width, pixel_height)
-        front_img = front_img.resize(token_pixel_dims)
-        back_img = back_img.resize(token_pixel_dims)
+        front_img = self._rescale_image(front_img, pixel_height, pixel_width)
+        back_img = self._rescale_image(back_img, pixel_height, pixel_width)
 
         # apply background color or image
         pixel_border = int(self._border_thickness * dpi_per_inch)
@@ -161,6 +182,7 @@ class Token():
         back_img = self.apply_background(back_img, background_image)
 
         # flip/mirror the back image as needed
+        # (note flip + mirror = 180 degree rotation)
         back_img = ImageOps.flip(back_img)
         if self._mirror_back:
             back_img = ImageOps.mirror(back_img)
@@ -174,7 +196,7 @@ class Token():
         # front img is on bottom so that fold-crease is on top.
         pixel_bottom_margin = int(self._bottom_margin * dpi_per_inch)
         y_back = pixel_border + pixel_bottom_margin
-        y_front = y_back + pixel_border + back_img.height + pixel_border
+        y_front = y_back + pixel_border + int(self._height * dpi_per_inch) + pixel_border
         combined_img.paste(back_img, (pixel_border, y_back), mask=back_img)
         combined_img.paste(front_img, (pixel_border, y_front), mask=front_img)
         self.set_corner_pixels_black(combined_img)
