@@ -27,7 +27,7 @@ The YAML file must adhere to the schema described in the models below.
 from __future__ import annotations
 
 import argparse
-import enum
+import multiprocessing
 import subprocess
 import tempfile
 from dataclasses import dataclass
@@ -35,129 +35,18 @@ from math import floor
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+from tqdm import tqdm
 import yaml
 from PIL import Image
-from pydantic import BaseModel, FilePath, validator
-from pydantic.color import Color
 from reportlab.lib.units import inch
 from reportlab.pdfgen import canvas
-
-###############################################################################
-# Configuration models
-###############################################################################
-
-class PageSize(str, enum.Enum):
-    letter = "letter"
-    double_letter = "double_letter"
-
-    @property
-    def size(self) -> Tuple[float, float]:
-        """Return the page dimensions in points."""
-        if self == PageSize.letter:
-            return (8.5 * inch, 11 * inch)
-        elif self == PageSize.letter:
-            return (11 * inch, 17 * inch)
-        else:
-            raise NotImplementedError()
-
-
-
-class PageOrientation(str, enum.Enum):
-    portrait = "portrait"
-    landscape = "landscape"
-
-
-class PlaceholderAlignment(str, enum.Enum):
-    center = "center"
-
-
-class PlaceholderResizeMethod(str, enum.Enum):
-    disable = "disable"  # don't resize asset
-    fill_height = "fill_height"  # scale asset to height of placeholder
-    fill_width = "fill_width"  # scale asset to width of placeholder
-
-
-class TentStyle(str, enum.Enum):
-    """
-    Tokens may be paper tents.  Three styles:
-
-    - disable  - no tent; token is assumed to be complete.
-    - mirror   - mirror the token across its top edge.
-    - rotated  - rotate the token by π and place rotated at top edge.
-    """
-
-    disable = "disable"
-    mirror = "mirror"
-    rotated = "rotated"
-
-
-class PageConfig(BaseModel):
-    dpi: int
-    pagesize: PageSize
-    orientation: PageOrientation
-    page_margin_inches: float
-    max_pages: int
-
-    @validator("dpi")
-    def _dpi_positive(cls, v: int) -> int:
-        if v <= 0:
-            raise ValueError("DPI must be a positive integer")
-        return v
-
-    @property
-    def page_dimensions(self) -> Tuple[float, float]:
-        """Return the page width and height in points respecting orientation."""
-        width, height = self.pagesize.size
-        if self.orientation == PageOrientation.landscape:
-            return height, width
-        return width, height
-
-
-class TokenPlaceholderConfig(BaseModel):
-    """
-    Specifies how to replace a token placeholder path.  The `placeholder_name`
-    refers to the Inkscape label found in the SVG template.  Each
-    placeholder is replaced by an external image according to the
-    provided resizing and alignment rules.
-    """
-
-    placeholder_name: str  # something like "placeholder_image"
-    replacement_image: FilePath
-    placement: PlaceholderAlignment = PlaceholderAlignment.center
-    resize_method: PlaceholderResizeMethod = PlaceholderResizeMethod.fill_height
-    keep_aspect_ratio: bool = True
-
-    # Offsets in inches applied to the final pasted asset.  Positive values
-    # shift the image right (for horizontal) and down (for vertical).  Use
-    # this to fine‑tune positioning beyond the bounding box centre.
-    offset_x_inch: float = 0.0
-    offset_y_inch: float = 0.0
-
-
-class TokenConfig(BaseModel):
-    """
-    A token configuration describes how to instantiate a specific token
-    from a given SVG template.  Multiple tokens can share a template
-    but differ in their placeholder substitutions or tent style.
-    """
-
-    template_svg: FilePath
-    background_color: Color  # fill in background in case of transparency
-    tent_style: TentStyle = TentStyle.disable
-    placeholders: List[TokenPlaceholderConfig]
-
-
-class PageOfTokensConfig(BaseModel):
-    page_config: PageConfig
-    token_configs: Dict[str, TokenConfig]
-
-    class Config:
-        arbitrary_types_allowed = True
+from paper_token_maker.structs import *
 
 
 ###############################################################################
 # Utility functions
 ###############################################################################
+
 
 def read_yaml_file(path: Path) -> Dict:
     """Load a YAML file and return its contents as a Python object."""
@@ -165,7 +54,9 @@ def read_yaml_file(path: Path) -> Dict:
         return yaml.safe_load(f)
 
 
-def query_svg_object_bbox(svg_path: Path, object_id: str) -> Tuple[float, float, float, float]:
+def query_svg_object_bbox(
+    svg_path: Path, object_id: str
+) -> Tuple[float, float, float, float]:
     """
     Query Inkscape for the bounding box (x, y, width, height) of a given
     object ID within an SVG file.  Inkscape returns coordinates in
@@ -186,6 +77,7 @@ def query_svg_object_bbox(svg_path: Path, object_id: str) -> Tuple[float, float,
         The bounding box of the object in pixels at 96 dpi.  The
         coordinate origin is the top‑left of the page.
     """
+
     # Inkscape's query options (-X, -Y, -W, -H) output numbers on stdout.
     # Each call returns a single value.
     def _query(flag: str) -> float:
@@ -268,6 +160,7 @@ def map_placeholders_to_ids(svg_path: Path) -> Dict[str, str]:
 # Token rendering logic
 ###############################################################################
 
+
 @dataclass
 class RenderedToken:
     """
@@ -308,14 +201,18 @@ def render_single_token(token_cfg: TokenConfig, page_dpi: int) -> RenderedToken:
     with tempfile.TemporaryDirectory() as tmpdir:
         tmp_svg = Path(tmpdir) / "cleaned_template.svg"
         tmp_png = Path(tmpdir) / "template.png"
+
         # Build a cleaned copy of the SVG without placeholder geometry.
         def _write_clean_svg() -> None:
             import xml.etree.ElementTree as ET
+
             ns = {"inkscape": "http://www.inkscape.org/namespaces/inkscape"}
             tree = ET.parse(token_cfg.template_svg)
             root = tree.getroot()
             # Build a parent map to enable removing children.
-            parent_map: Dict[ET.Element, ET.Element] = {c: p for p in tree.iter() for c in p}
+            parent_map: Dict[ET.Element, ET.Element] = {
+                c: p for p in tree.iter() for c in p
+            }
             to_remove = []
             for elem in parent_map.keys():
                 label = elem.get(f"{{{ns['inkscape']}}}label")
@@ -408,7 +305,9 @@ def render_single_token(token_cfg: TokenConfig, page_dpi: int) -> RenderedToken:
             pass
         # Resize if needed.
         if (new_w, new_h) != (asset_w, asset_h):
-            asset_img = asset_img.resize((int(round(new_w)), int(round(new_h))), Image.LANCZOS)
+            asset_img = asset_img.resize(
+                (int(round(new_w)), int(round(new_h))), Image.LANCZOS
+            )
             asset_w, asset_h = asset_img.size
         # Compute position based on alignment.  Currently only center.
         if ph.placement == PlaceholderAlignment.center:
@@ -466,9 +365,113 @@ def render_single_token(token_cfg: TokenConfig, page_dpi: int) -> RenderedToken:
     return RenderedToken(final_img, width_pts, height_pts)
 
 
+def render_single_token_list_arg(arg) -> RenderedToken:
+    token_cfg: TokenConfig
+    page_dpi: int
+    token_cfg, page_dpi = arg
+    return render_single_token(token_cfg=token_cfg, page_dpi=page_dpi)
+
+
 ###############################################################################
 # Page layout and PDF generation
 ###############################################################################
+
+from reportlab.pdfgen import canvas
+from reportlab.lib.utils import ImageReader
+
+
+def render_tokens_packed(
+    rendered_tokens, output_pdf, page_width, page_height, margin_pt
+):
+    """
+    rendered_tokens: list of objects with .image, .width_pts, .height_pts
+    output_pdf: Path-like for output
+    page_width, page_height: floats in points
+    margin_pt: float in points
+    """
+
+    # 1. sort the tokens by width before rendering any
+    tokens = sorted(rendered_tokens, key=lambda t: t.width_pts)
+
+    c = canvas.Canvas(str(output_pdf), pagesize=(page_width, page_height))
+
+    # We'll pack left-to-right in "shelves".
+    # Each shelf/row has its own height = tallest token in that shelf.
+    # When we can't fit horizontally, we start a new shelf on the same page.
+    # When we can't fit vertically, we start a new page.
+
+    # PDF coords: origin is bottom-left.
+    # We'll lay out from the top margin downward.
+    # y_cursor_top is the current row's TOP edge in PDF coords.
+    # x_cursor_left is where the next token will go on this row.
+
+    def start_new_page():
+        c.showPage()
+
+    # initialize first page
+    current_page_started = True
+    x_cursor_left = margin_pt
+    y_cursor_top = page_height - margin_pt  # top drawable y for current row
+    current_row_height = 0  # tallest token in this row, in pts
+
+    for idx, token in enumerate(tokens):
+        w = token.width_pts
+        h = token.height_pts
+
+        # If this is the first token in a new row, current_row_height might be 0.
+        # We'll update it after placing.
+        # BUT before placing, we need to see if it fits:
+
+        # 1) Horizontal fit: if this token would cross page_width - margin_pt
+        if x_cursor_left + w > page_width - margin_pt:
+            # doesn't fit in this row -> wrap to a new row
+
+            # Move down by the current row height
+            y_cursor_top -= current_row_height
+            # Reset row tracking
+            x_cursor_left = margin_pt
+            current_row_height = 0
+
+        # 2) Vertical fit: will this row (with this token's height) go below bottom margin?
+        # The bottom of this token would be y_cursor_top - h
+        # We must ensure bottom >= margin_pt
+        if y_cursor_top - h < margin_pt:
+            # doesn't fit on this page -> new page
+            start_new_page()
+
+            # reset cursors for the new page
+            x_cursor_left = margin_pt
+            y_cursor_top = page_height - margin_pt
+            current_row_height = 0
+
+        # Now we are guaranteed it fits on the current page & row.
+
+        # draw position (PDF origin bottom-left):
+        # top-left of this token should be (x_cursor_left, y_cursor_top)
+        # BUT drawImage needs bottom-left corner.
+        x_pos = x_cursor_left
+        y_pos = y_cursor_top - h  # bottom-left y
+
+        img_reader = ImageReader(token.image)
+        c.drawImage(
+            img_reader,
+            x_pos,
+            y_pos,
+            width=w,
+            height=h,
+            mask="auto",
+        )
+
+        # advance x cursor for next token in this row
+        x_cursor_left += w
+
+        # update the row height to the tallest token so far in this row
+        if h > current_row_height:
+            current_row_height = h
+
+    # after all tokens
+    c.save()
+
 
 def render_tokens_to_pdf(config: PageOfTokensConfig, output_pdf: Path) -> None:
     """
@@ -488,9 +491,21 @@ def render_tokens_to_pdf(config: PageOfTokensConfig, output_pdf: Path) -> None:
     # Pre-render all tokens.  We need to know their physical sizes to
     # determine how many will fit per page.  Maintain the original order.
     rendered_tokens: List[RenderedToken] = []
-    for name, tok_cfg in config.token_configs.items():
-        rendered = render_single_token(tok_cfg, page_cfg.dpi)
-        rendered_tokens.append(rendered)
+    if True:
+        with multiprocessing.Pool(multiprocessing.cpu_count()) as p:
+            arguments_list = [
+                [tok_cfg, page_cfg.dpi] for tok_cfg in config.token_configs.values()
+            ]
+            rendered_tokens = list(
+                tqdm(
+                    p.imap(render_single_token_list_arg, arguments_list),
+                    total=len(arguments_list),
+                )
+            )
+    else:
+        for name, tok_cfg in tqdm(config.token_configs.items()):
+            rendered = render_single_token(tok_cfg, page_cfg.dpi)
+            rendered_tokens.append(rendered)
 
     if not rendered_tokens:
         # Nothing to render; create an empty PDF.
@@ -522,6 +537,11 @@ def render_tokens_to_pdf(config: PageOfTokensConfig, output_pdf: Path) -> None:
     total_pages_needed = int((total_tokens + tokens_per_page - 1) / tokens_per_page)
     pages_to_create = min(total_pages_needed, page_cfg.max_pages)
 
+    render_tokens_packed(
+        rendered_tokens, output_pdf, page_width, page_height, margin_pt
+    )
+
+    """
     # Begin writing the PDF.
     c = canvas.Canvas(str(output_pdf), pagesize=(page_width, page_height))
     token_idx = 0
@@ -554,11 +574,13 @@ def render_tokens_to_pdf(config: PageOfTokensConfig, output_pdf: Path) -> None:
         if page_num < pages_to_create - 1:
             c.showPage()
     c.save()
+    """
 
 
 ###############################################################################
 # Command line interface
 ###############################################################################
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(
