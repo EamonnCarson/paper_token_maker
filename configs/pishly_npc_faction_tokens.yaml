@@ -1,0 +1,2119 @@
+page_config:
+  dpi: 450
+  pagesize: double_letter
+  orientation: landscape
+  page_margin_inches: 0.5
+  max_pages: 1
+token_configs:
+  token_1:
+    template_svg: res/lancer/templates/template_npc_size0.5.svg
+    background_color: '#91c0df'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Cephalapunk_Assassin.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_2:
+    template_svg: res/lancer/templates/template_npc_size0.5.svg
+    background_color: '#91c0df'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Cephalapunk_Assassin.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_3:
+    template_svg: res/lancer/templates/template_npc_size2.svg
+    background_color: '#91c0df'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Cephalapunk_Barricade.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/controller.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_4:
+    template_svg: res/lancer/templates/template_npc_size2.svg
+    background_color: '#91c0df'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Cephalapunk_Barricade.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/controller.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_5:
+    template_svg: res/lancer/templates/template_npc_size3.svg
+    background_color: '#91c0df'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Cephalapunk_Goliath.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_6:
+    template_svg: res/lancer/templates/template_npc_size3.svg
+    background_color: '#91c0df'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Cephalapunk_Goliath.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_7:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#91c0df'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Cephalapunk_Leech.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/support.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_8:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#91c0df'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Cephalapunk_Leech.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/support.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_9:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#91c0df'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Cephalapunk_Sentinel.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_10:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#91c0df'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Cephalapunk_Sentinel.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_11:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#ffcd1a'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Hellrunner_Cataphract.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_12:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#ffcd1a'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Hellrunner_Cataphract.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_13:
+    template_svg: res/lancer/templates/template_npc_size0.5.svg
+    background_color: '#ffcd1a'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Hellrunner_Mirage.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/support.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_14:
+    template_svg: res/lancer/templates/template_npc_size0.5.svg
+    background_color: '#ffcd1a'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Hellrunner_Mirage.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/support.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_15:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#ffcd1a'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Hellrunner_Scourer.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: -0.05
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_16:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#ffcd1a'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Hellrunner_Scourer.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: -0.05
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_17:
+    template_svg: res/lancer/templates/template_npc_size2.svg
+    background_color: '#ffcd1a'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Hellrunner_Scourer.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: -0.06
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_18:
+    template_svg: res/lancer/templates/template_npc_size2.svg
+    background_color: '#ffcd1a'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Hellrunner_Scourer.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: -0.06
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_19:
+    template_svg: res/lancer/templates/template_npc_size0.5.svg
+    background_color: '#ffcd1a'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Hellrunner_Scout.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/support.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_20:
+    template_svg: res/lancer/templates/template_npc_size0.5.svg
+    background_color: '#ffcd1a'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Hellrunner_Scout.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/support.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_21:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#ffcd1a'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Hellrunner_Sniper.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/artillery.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_22:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#ffcd1a'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Hellrunner_Sniper.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/artillery.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_23:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#bebb80'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Morningstar_Engineer.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_24:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#bebb80'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Morningstar_Engineer.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_25:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#bebb80'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Morningstar_Hornet.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/controller.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_26:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#bebb80'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Morningstar_Hornet.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/controller.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_27:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#bebb80'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Morningstar_Rainmaker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/artillery.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_28:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#bebb80'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Morningstar_Rainmaker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/artillery.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_29:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#bebb80'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Morningstar_Specter.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_30:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#bebb80'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Morningstar_Specter.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_31:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#bebb80'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Morningstar_Strider.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_32:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#bebb80'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Morningstar_Strider.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_33:
+    template_svg: res/lancer/templates/template_npc_size2.svg
+    background_color: '#bebb80'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Morningstar_Strider.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_34:
+    template_svg: res/lancer/templates/template_npc_size2.svg
+    background_color: '#bebb80'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Morningstar_Strider.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_35:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#84c6b0'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Parallax_Aegis.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/support.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_36:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#84c6b0'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Parallax_Aegis.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/support.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_37:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#84c6b0'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Parallax_Operator.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/artillery.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_38:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#84c6b0'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Parallax_Operator.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/artillery.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_39:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#84c6b0'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Parallax_Priest.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/support.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_40:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#84c6b0'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Parallax_Priest.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/support.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_41:
+    template_svg: res/lancer/templates/template_npc_size2.svg
+    background_color: '#84c6b0'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Parallax_Spite.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_42:
+    template_svg: res/lancer/templates/template_npc_size2.svg
+    background_color: '#84c6b0'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Parallax_Spite.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_43:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#84c6b0'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Parallax_Witch.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/controller.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_44:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#84c6b0'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Parallax_Witch.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/controller.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_45:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#7695a2'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Raider_Assault.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_46:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#7695a2'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Raider_Assault.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_47:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#7695a2'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Raider_Breacher.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_48:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#7695a2'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Raider_Breacher.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_49:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#7695a2'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Raider_Hive.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/controller.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_50:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#7695a2'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Raider_Hive.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/controller.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_51:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#7695a2'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Raider_Pyro.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_52:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#7695a2'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Raider_Pyro.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_53:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#7695a2'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Raider_Ronin.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_54:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#7695a2'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Raider_Ronin.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_55:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#9dc482'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Verdant_Ace.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_56:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#9dc482'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Verdant_Ace.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_57:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#9dc482'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Verdant_Archer.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/controller.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_58:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#9dc482'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Verdant_Archer.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/controller.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_59:
+    template_svg: res/lancer/templates/template_npc_size2.svg
+    background_color: '#9dc482'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Verdant_Bastion.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_60:
+    template_svg: res/lancer/templates/template_npc_size2.svg
+    background_color: '#9dc482'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Verdant_Bastion.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/defender.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_61:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#9dc482'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Verdant_Berserker.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_62:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#9dc482'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Verdant_Berserker.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/striker.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_63:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#9dc482'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Verdant_Seeder.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/controller.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_1.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_1.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+  token_64:
+    template_svg: res/lancer/templates/template_npc_size1.svg
+    background_color: '#9dc482'
+    tent_style: rotated
+    placeholders:
+    - placeholder_name: placeholder_image
+      replacement_image: res/lancer/images/pishly_npc_factions/Verdant_Seeder.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_role_icon
+      replacement_image: res/lancer/images/role_icons/controller.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_id
+      replacement_image: res/lancer/images/roman_numerals/roman_numeral_2.png
+      placement: center
+      resize_method: fill_height
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0
+    - placeholder_name: placeholder_chevrons
+      replacement_image: res/lancer/images/chevrons/white_chevrons_2.png
+      placement: center
+      resize_method: fill_width
+      keep_aspect_ratio: true
+      offset_x_inch: 0.0
+      offset_y_inch: 0.0

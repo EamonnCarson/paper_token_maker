@@ -10,10 +10,21 @@ Run a program to create a token sheet config for yourself.
 for example, I made one for lancer that uses the (amazing) pishly token set.
 I can't distribute his artwork obviously, but if you download his zip, unpack it into
 the images folder and run
+
 ```bash
-paper_token_maker make_lancer_npc_token_config
+mkdir -p configs
+manifest=res/lancer/data/npc_faction_manifest.csv  # data about each token
+output_config=configs/pishly_npc_faction_tokens.yaml  # a specification of what to render
+uv run paper_token_maker/make_lancer_config.py $manifest $output_config
 ```
+
 And it will automatically output a configuration for you based off of the npc data I have placed here.
 
 ## 2. Create your token sheet
-```paper_token_maker --config_yaml configs/lancer_alt.yaml --output_file pishly2.pdf```
+```bash
+mkdir -p outputs
+input_config=configs/pishly_npc_faction_tokens.yaml  # a specification of what to render
+output=outputs/pishly_npc_faction_tokens.pdf
+uv run paper_token_maker --config $input_config --output $output
+```
+
