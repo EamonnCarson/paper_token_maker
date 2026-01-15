@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="10.79711mm"
+   height="11.225215mm"
+   viewBox="0 0 10.79711 11.225215"
+   version="1.1"
+   id="svg4220"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="LancerIcons.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4222"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="3.7522727"
+     inkscape:cx="112.19867"
+     inkscape:cy="104.73652"
+     inkscape:window-width="3440"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g53430" />
+  <defs
+     id="defs4217" />
+  <g
+     id="g35787"
+     transform="matrix(1.9283996,0,0,-1.9283997,-2.2542991,-2.0402469)"
+     inkscape:label="symbol_striker"
+     style="stroke-width:0.867543"
+     inkscape:groupmode="layer">
+    <g
+       id="g35789"
+       transform="translate(0,-8)">
+      <g
+         id="g35791" />
+      <g
+         id="g35805">
+        <g
+           id="g35803">
+          <path
+             d="M 3.969,6.942 3.175,5.354 3.704,4.825 V 1.385 L 3.969,1.121 4.233,1.385 v 3.44 l 0.53,0.529 z"
+             style="fill:#c31e26;fill-opacity:1;fill-rule:evenodd;stroke:none"
+             id="path35797" />
+          <path
+             d="M 6.565,5.612 5.277,4.392 5.593,3.714 4.869,1.725 5.027,1.385 5.366,1.544 6.09,3.533 6.768,3.849 Z"
+             style="fill:#c31e26;fill-opacity:1;fill-rule:evenodd;stroke:none"
+             id="path35799" />
+          <path
+             d="M 1.372,5.612 1.169,3.849 1.847,3.533 2.571,1.544 2.91,1.385 3.069,1.725 2.345,3.714 2.661,4.392 Z"
+             style="fill:#c31e26;fill-opacity:1;fill-rule:evenodd;stroke:none"
+             id="path35801" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
