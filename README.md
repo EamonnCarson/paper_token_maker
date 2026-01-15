@@ -4,6 +4,15 @@
 - yaml file specifying what tokens you want printed.
 
 # How to Use
+
+Here's a simple example with blanks
+```bash
+mkdir -p configs outputs
+uv run paper_token_maker/make_blank_config.py --num_small 4 --num_medium 12 --num_large 6 --num_huge 4 --output configs/blank.yaml
+uv run paper_token_maker --config configs/blank.yaml --output outputs/blanks.pdf
+```
+Below is a more involved example.
+
 ## 1. Create your configuration
 A token sheet configuration is usually pretty long and repetitive.
 Run a program to create a token sheet config for yourself.
